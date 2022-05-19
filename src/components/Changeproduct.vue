@@ -14,7 +14,7 @@
   export default {
     data(){ 
       return { 
-        ProductId: this.$route.params.id,
+        ProductId: this.$route.params.id,     // TODO: camelCase gebruiken
         groceryData: {},
       }
     },

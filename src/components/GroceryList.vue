@@ -49,7 +49,7 @@ export default {
     groceryList() {
       return this.$store.state.groceryList
     },
-
+    // TODO: gebruik camelCase, dus totalPrice en delProduct
     totalprice() {
       return this.groceryList.reduce((previousValue, currentValue) => previousValue + parseFloat(currentValue.amount*currentValue.price),
       0).toFixed(2);
@@ -58,6 +58,8 @@ export default {
 
   methods: {
     delproduct(index){
+      // TODO: commits altijd via action laten verlopen
+      // TODO: verwijderen altijd via (product) id laten verlopen, dus niet via array index om evt. fouten te voorkomen
       this.$store.commit('DeleteProduct', index);
     },
   },
